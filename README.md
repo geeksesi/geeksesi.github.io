@@ -1,7 +1,7 @@
 # geeksesi.ir
 my name is Mohammad Javad Ghasemy. and it's my blog.
 
-maded by [Hexo][https://hexo.io/]
+maded by [Hexo](https://hexo.io/)
 
 any contribute are wellcome :)
 
