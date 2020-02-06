@@ -99,7 +99,7 @@ theme:  cactus-light
 deploy:
   type: git
   repo: https://github.com/geeksesi/geeksesi.github.io.git
-  branch: gh-pages
+  branch: master 
 search:
   path: search.xml
   field: post
