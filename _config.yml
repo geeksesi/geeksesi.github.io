@@ -100,4 +100,7 @@ deploy:
   type: git
   repo: https://github.com/geeksesi/geeksesi.github.io.git
   branch: gh-pages
-
+search:
+  path: search.xml
+  field: post
+  content: false
