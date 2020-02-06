@@ -93,7 +93,50 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme:  cactus-light
+theme:  cactus
+theme_config:
+  colorscheme: light
+  nav:
+    Home: /
+    About: /about/
+    Writing: /archives/
+    Projects: http://github.com/geeksesi
+    categories: /categories/
+  posts_overview:
+    show_all_posts: true
+  social_links:
+    github: https://github.com/geeksesi 
+    twitter: https://twitter.com/geeksesi
+    telegram: https://t.me/geeksesi
+    discord: https://discord.gg/JKhZSa4
+  google_analytics:
+    enabled: true
+    id: 'UA-154920522-1'
+  disqus:
+    enabled: true
+    shortname: 'geeksesi.ir'
+  rss: true
+  gravatar:
+    email: geeksesi@gmail.com
+  favicon:
+    desktop:
+      gravatar: true 
+    android:
+      gravatar: true
+    apple:
+      gravatar: true
+    logo:
+      enabled: true
+      width: 50
+      height: 50
+      gravatar: true 
+
+
+
+
+
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
