@@ -130,19 +130,14 @@ theme_config:
       width: 50
       height: 50
       gravatar: true 
-
-
-
-
-
-
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/geeksesi/geeksesi.github.io.git
   branch: master 
+  extend_dirs: /
+  ignore_pattern: '\.json|themes|scaffolds|source|\.yml|\.json'
 search:
   path: search.xml
   field: post
