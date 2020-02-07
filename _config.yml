@@ -142,3 +142,7 @@ search:
   path: search.xml
   field: post
   content: false
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: false
