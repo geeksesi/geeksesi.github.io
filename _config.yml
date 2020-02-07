@@ -114,7 +114,7 @@ theme_config:
     id: 'UA-154920522-1'
   disqus:
     enabled: true
-    shortname: 'geeksesi.ir'
+    shortname: 'geeksesi-ir'
   rss: true
   gravatar:
     email: geeksesi@gmail.com
