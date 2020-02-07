@@ -118,6 +118,12 @@ theme_config:
   rss: true
   gravatar:
     email: geeksesi@gmail.com
+  logo:
+    enabled: true
+    width: 50
+    height: 50
+    url: /images/avatar.jpeg
+    gravatar: false 
   favicon:
     desktop:
       gravatar: true 
@@ -125,11 +131,6 @@ theme_config:
       gravatar: true
     apple:
       gravatar: true
-    logo:
-      enabled: true
-      width: 50
-      height: 50
-      gravatar: true 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
