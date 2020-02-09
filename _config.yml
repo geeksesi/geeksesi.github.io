@@ -98,7 +98,7 @@ theme_config:
   colorscheme: light
   nav:
     Home: /
-    About: /about/
+    About: /2020/02/07/hello-world/
     Writing: /archives/
     Projects: http://github.com/geeksesi
     categories: /categories/
