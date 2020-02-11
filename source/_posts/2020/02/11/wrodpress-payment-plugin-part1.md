@@ -7,9 +7,10 @@ tags:
   - payment
   - woocommerce
   - wordpress_plugin
-categories:
-  - - php
-    - wordpress
+  - 100DaysOfCode
+categories: 
+  - [php, wordpress]
+  - 100DaysOfCode
 date: 2020-02-11 04:18:03
 ---
 
@@ -22,8 +23,7 @@ img { width: 200px; }
 
 ## The Story
 Hey there, how are you ?
-i want to write a little about my experince as a wordpress plugin developer.
-
+i want to write a little about my experince as a wordpress plugin developer in week one of [100DaysOfCode](https://geeksesi.ir).
 you can find some of my plugin in [github](https://github.com/geeksesi).
 
 so let's start to know what we need. and make a payment plugin like this : [wp-zilon-woocommerce](https://github.com/geeksesi/wp-zilon-woocommerce)
