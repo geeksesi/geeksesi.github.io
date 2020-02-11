@@ -2,26 +2,27 @@
 title: wrodpress payment plugin Part1
 comments: true
 tags:
-- wordpress
-- php
-- payment
-- woocommerce
-- wordpress_plugin
-- 100DaysOfCode
-categories: 
-- [php, wordpress]
-- 100DaysOfCode
+  - wordpress
+  - php
+  - payment
+  - woocommerce
+  - wordpress_plugin
+categories:
+  - - php
+    - wordpress
+date: 2020-02-11 04:18:03
 ---
 
+
 <style>
-img { width: 300px; }
+img { width: 200px; }
 </style>
 
 ![Mohammad Javad Ghasemy](/images/geeksesi-ir_wordpress_payment_plugin_p1.jpg)
 
 ## The Story
 Hey there, how are you ?
-i want to write a little about my experince as a wordpress plugin developer in week one of [100DaysOfCode](https://geeksesi.ir).
+i want to write a little about my experince as a wordpress plugin developer.
 
 you can find some of my plugin in [github](https://github.com/geeksesi).
 
