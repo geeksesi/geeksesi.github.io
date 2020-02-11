@@ -59,7 +59,7 @@ we must to make something like this :
 ```
 * care about name choicing because duplicate name and functions will make confilict in wordpress.
 
-### plugin structure
+### plugin explain
 we are in peace here :D and we need some comments in our plugin. something like this :
 
 ```
@@ -75,4 +75,27 @@ Text Domain: -e('NAME OF PLUGIN','NAME_OF_PLUGIN')
 ```
 * i will explain more about text domain in future.
 
+* you must to put this comment on first of your plugin file.
 
+### detect a problem
+in php user can access to you plugin directly. (it's a problem for our wordpress security) worpdress has a easy way to fix this issue.
+you must to put `defined('ABSPATH') || exit('No Direct Access.');` after `<?php` in your each file.
+this code will check if a ABSPATH (it's a wordpress local variable) isset means user running this plugin how we want.
+but if not set means user want to make a not valid request to our serve and we must to kill this connection.
+
+
+### some usefull defines 
+it's good to make some routes define in our plugin. always i will make this :
+```
+define('WP_ZILON_WOOCOMMERCE_DIR', plugin_dir_path(__FILE__));
+define('WP_ZILON_WOOCOMMERCE_URL', plugin_dir_url(__FILE__));
+define('WP_ZILON_WOOCOMMERCE_ASSETS_URL', trailingslashit(WP_ZILON_WOOCOMMERCE_URL.'assets/'));
+define('WP_ZILON_WOOCOMMERCE_INC_DIR', trailingslashit(WP_ZILON_WOOCOMMERCE_DIR.'app/'));
+```
+this const variables will help us in future :)
+
+### start coding.
+now your plugin is ready.
+i will show how to make shortcode in next part of this post.
+
+be happy untile the next post :) good luck.
