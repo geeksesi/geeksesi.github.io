@@ -1,5 +1,5 @@
 ---
-title: wrodpress payment plugin Part1
+title: wordpress payment plugin Part1
 comments: true
 tags:
   - wordpress
@@ -7,10 +7,8 @@ tags:
   - payment
   - woocommerce
   - wordpress_plugin
-  - 100DaysOfCode
 categories: 
   - [php, wordpress]
-  - 100DaysOfCode
 date: 2020-02-11 04:18:03
 ---
 
