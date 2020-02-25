@@ -22,6 +22,7 @@ and also i will write about :
 
 # third partys
 - [Cactus Theme](https://github.com/probberechts/hexo-theme-cactus)
+- [hexo Emoji](https://github.com/frapples/hexo-article-emoji)
 
 
 # license 
