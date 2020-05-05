@@ -6,4 +6,5 @@ picture:
 comments: true
 tags:
 categories:
+rtl : true
 ---

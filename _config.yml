@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Mohammad Javad Ghasemy's blog 
-subtitle: it's my personal blog
-description: i will write about my daily job and also new things i did learn.
-keywords: Mohammad Javad Ghasemy, rust, game developement, node.js, php, wordpress, iran, socket, udp, tcp,
+title: محمد جواد قاسمی - چرک‌نویس
+subtitle: به وبلاگ یه برنامه‌نویس خسته خوش‌آمدید.
+description: در این مکان مطالبی شامل کمی درد دل و هیجانات تخلیه نشده به سبب یاد گرفتن چیز‌های جدید یافت می شود.
+keywords: Mohammad Javad Ghasemy, rust, game developement, node.js, php, wordpress, iran, socket, udp, tcp, laravel
 author: Mohammad Javad Ghasemy
-language: en
+language: fa
 timezone: Asia/Tehran
 
 # URL
@@ -97,23 +97,25 @@ theme:  cactus
 theme_config:
   colorscheme: light
   nav:
-    Home: /
-    About: /2020/02/07/hello-world/
-    Writing: /archives/
-    Projects: http://github.com/geeksesi
-    categories: /categories/
+    خانه: /
+    درباره‌من: /2020/02/07/hello-world/
+    نوشته‌ها: /archives/
+    پروژه‌ها: http://github.com/geeksesi
+    دسته‌بندی: /categories/
   posts_overview:
     show_all_posts: true
   social_links:
     github: https://github.com/geeksesi 
+    gitlab: https://gitlab.com/geeksesi 
     twitter: https://twitter.com/geeksesi
     telegram: https://t.me/geeksesi
     discord: https://discord.gg/JKhZSa4
+    mail: mailto:geeksesi@gmail.com+geeksesiIr
   google_analytics:
     enabled: true
     id: 'UA-154920522-1'
   disqus:
-    enabled: true
+    enabled: false
     shortname: 'geeksesi-ir'
   rss: true
   gravatar:
@@ -131,6 +133,7 @@ theme_config:
       gravatar: true
     apple:
       gravatar: true
+  direction : rtl
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
