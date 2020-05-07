@@ -12,6 +12,6 @@ pages:
     - npm run build
   artifacts:
     paths:
-      - public_html
+      - public
   only:
     - master
