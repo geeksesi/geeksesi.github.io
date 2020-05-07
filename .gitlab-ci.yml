@@ -9,7 +9,7 @@ before_script:
 
 pages:
   script:
-    - hexo generate
+    - npm run build
   artifacts:
     paths:
       - public_html
