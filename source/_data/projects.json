@@ -3,5 +3,35 @@
         "name": "do0ir-cli",
         "url": "https://github.com/geeksesi/do0ir-cli",
         "desc": "کلاینت کوتاه کننده لینک دوصفر "
+    },
+    {
+        "name": "Search-Book-By-Isbn",
+        "url": "https://gitlab.com/kmtqom/search-book-by-isbn",
+        "desc": "چستجوی اطلاعات کتاب بر اساس شابک"
+    },
+    {
+        "name": "payzos.io",
+        "url": "https://payzos.io",
+        "desc": "سرویس درگاه‌پرداخت ارزدیجیتال XTZ"
+    },
+    {
+        "name": "wp-payzos-for-woocommerce",
+        "url": "https://wordpress.org/plugins/wp-payzos-for-woocommerce",
+        "desc": "پلاگین وردپرس درگاه پرداخت payzos"
+    },
+    {
+        "name": "payzos-opencart",
+        "url": "https://gitlab.com/payzos/payzos-payment-opencart",
+        "desc": "پلاگین اپن‌کارت درگاه پرداخت payzos"
+    },
+    {
+        "name": "payzos-prestashop",
+        "url": "https://gitlab.com/payzos/payzos-prestashop",
+        "desc": "پلاگین پرستاشاپ درگاه پرداخت payzos"
+    },
+    {
+        "name": "payzos-magento",
+        "url": "https://gitlab.com/payzos/payzos-magento",
+        "desc": "پلاگین مجنتو درگاه پرداخت payzos"
     }
 ]
