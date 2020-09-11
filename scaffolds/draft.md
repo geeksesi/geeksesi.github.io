@@ -1,7 +1,7 @@
 ---
-title: {{ title }}
+title: { { title } }
 comments: true
 tags:
 categories:
-picture: ''
+picture: ""
 ---
