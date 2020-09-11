@@ -1,0 +1,152 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: محمد جواد قاسمی - چرک‌نویس
+subtitle: به وبلاگ یه برنامه‌نویس خسته خوش‌آمدید.
+description: در این مکان مطالبی شامل کمی درد دل و هیجانات تخلیه نشده به سبب یاد گرفتن چیز‌های جدید یافت می شود.
+keywords: Mohammad Javad Ghasemy, rust, game developement, node.js, php, wordpress, iran, socket, udp, tcp, laravel
+author: Mohammad Javad Ghasemy
+language: fa
+timezone: Asia/Tehran
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://geeksesi.ir
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+    trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+    trailing_html: false # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :year/:month/:day/:title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+    enable: true # Open external links in new tab
+    field: site # Apply to the whole site
+    exclude: ""
+filename_case: 1
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+    enable: true
+    line_number: true
+    auto_detect: false
+    tab_replace: "    "
+    wrap: true
+    hljs: false
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+    path: ""
+    per_page: 0
+    order_by: -date
+
+# Category & Tag
+default_category: nothing
+category_map: rust, socket, front-end, back-end, my_dream, javscript, node.js, php, linux, nothing, experience
+tag_map: rust, socket, front-end, back-end, my_dream, javscript, node.js, php, wordpress, dream, job, linux, experience
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: true
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 0
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: cactus
+theme_config:
+    colorscheme: light
+    nav:
+        خانه: /
+        درباره‌من: /2020/02/07/hello-world/
+        نوشته‌ها: /archives/
+        پروژه‌ها: http://github.com/geeksesi
+        دسته‌بندی: /categories/
+    posts_overview:
+        show_all_posts: true
+    social_links:
+        github: https://github.com/geeksesi
+        gitlab: https://gitlab.com/geeksesi
+        twitter: https://twitter.com/geeksesi
+        telegram: https://t.me/geeksesi
+        discord: https://discord.gg/JKhZSa4
+        mail: mailto:geeksesi@gmail.com+geeksesiIr
+    google_analytics:
+        enabled: true
+        id: "UA-154920522-1"
+    disqus:
+        enabled: true
+        shortname: "geeksesi-ir"
+    rss: true
+    gravatar:
+        email: geeksesi@gmail.com
+    logo:
+        enabled: true
+        width: 50
+        height: 50
+        url: /images/avatar.jpeg
+        gravatar: false
+    favicon:
+        desktop:
+            gravatar: true
+        android:
+            gravatar: true
+        apple:
+            gravatar: true
+    direction: rtl
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+# deploy:
+#     type: git
+#     repo: https://github.com/geeksesi/geeksesi.github.io.git
+#     branch: master
+#     extend_dirs: /
+#     ignore_pattern: '\.json|themes|scaffolds|source|\.yml|\.json'
+search:
+    path: search.xml
+    field: post
+    content: false
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap_template.xml
+    rel: false

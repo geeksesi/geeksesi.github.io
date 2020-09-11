@@ -1,0 +1,8 @@
+<% if (image) { %>
+    <div class="post-image" > 
+        <a href="<%- url_for(post.path) %>" target="_blank" itemprop="url"><img src="<%= image %>" alt="<%= post.title %>-image" title="<%= post.title %>"></a>
+    </div>
+    <br>
+<% } else { %>
+    
+<% } %>
