@@ -23,7 +23,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -135,13 +135,13 @@ theme_config:
             gravatar: true
     direction: rtl
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#     type: git
-#     repo: https://github.com/geeksesi/geeksesi.github.io.git
-#     branch: master
-#     extend_dirs: /
-#     ignore_pattern: '\.json|themes|scaffolds|source|\.yml|\.json'
+# Docs: https://hexo.io/docs/deployment.html
+deploy:
+    type: git
+    repo: https://github.com/geeksesi/geeksesi.github.io.git
+    branch: page
+    extend_dirs: /
+    ignore_pattern: '\.json|themes|scaffolds|source|\.yml|\.json'
 search:
     path: search.xml
     field: post
