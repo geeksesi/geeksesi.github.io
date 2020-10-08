@@ -1565,6 +1565,15 @@ pre {
 }
 pre code {
   display: block;
+  direction: ltr !important;
+  text-align: left !important;
+  padding: 0;
+  border: none;
+}
+figure {
+  display: block;
+  direction: ltr !important;
+  text-align: left !important;
   padding: 0;
   border: none;
 }
