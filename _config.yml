@@ -98,9 +98,9 @@ theme_config:
     colorscheme: light
     nav:
         خانه: /
-        درباره‌من: /2020/02/07/hello-world/
+        درباره‌من: https://resume.geeksesei.ir
         نوشته‌ها: /archives/
-        پروژه‌ها: http://github.com/geeksesi
+        پروژه‌ها: https://github.com/geeksesi
         دسته‌بندی: /categories/
     posts_overview:
         show_all_posts: true
@@ -150,5 +150,5 @@ sitemap:
     path: sitemap.xml
     template: ./sitemap_template.xml
     rel: true
-    tags: true
+    tags: false
     categories: true

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang=fa>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="img { width: 200px; }    The StoryHey there, how are you ? i want to write a little about my experince as a wordpress plugin developer in week one of 100DaysOfCode. you can find some of my plugin in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wordpress payment plugin Part1">
+<meta property="og:url" content="https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/">
+<meta property="og:site_name" content="محمد جواد قاسمی - چرک‌نویس">
+<meta property="og:description" content="img { width: 200px; }    The StoryHey there, how are you ? i want to write a little about my experince as a wordpress plugin developer in week one of 100DaysOfCode. you can find some of my plugin in">
+<meta property="og:locale">
+<meta property="og:image" content="https://geeksesi.ir/images/geeksesi-ir_wordpress_payment_plugin_p1.jpg">
+<meta property="article:published_time" content="1398-11-22T00:52:19.000Z">
+<meta property="article:modified_time" content="1398-11-22T00:52:19.000Z">
+<meta property="article:author" content="Mohammad Javad Ghasemy">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="wordpress">
+<meta property="article:tag" content="payment">
+<meta property="article:tag" content="woocommerce">
+<meta property="article:tag" content="wordpress_plugin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://geeksesi.ir/images/geeksesi-ir_wordpress_payment_plugin_p1.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>wordpress payment plugin Part1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="محمد جواد قاسمی - چرک‌نویس" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body class="max-width mx-auto px3 rtl">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/1398/12/07/wordpress-payment-plugin-part2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/1398/11/18/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">پست پیشین</span>
+      <span id="i-next" class="info" style="display:none;">پست یعدی</span>
+      <span id="i-top" class="info" style="display:none;">بازگشت به بالا</span>
+      <span id="i-share" class="info" style="display:none;">اشتراک‌گذاری</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&text=wordpress payment plugin Part1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&is_video=false&description=wordpress payment plugin Part1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=wordpress payment plugin Part1&body=Check out this article: https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&name=wordpress payment plugin Part1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&t=wordpress payment plugin Part1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Story"><span class="toc-number">1.</span> <span class="toc-text">The Story</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wordpress"><span class="toc-number">2.</span> <span class="toc-text">Wordpress</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wordpress-structure"><span class="toc-number">2.1.</span> <span class="toc-text">wordpress structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugin-explain"><span class="toc-number">2.2.</span> <span class="toc-text">plugin explain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#detect-a-problem"><span class="toc-number">2.3.</span> <span class="toc-text">detect a problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#some-usefull-defines"><span class="toc-number">2.4.</span> <span class="toc-text">some usefull defines</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#start-coding"><span class="toc-number">2.5.</span> <span class="toc-text">start coding.</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    
+
+    
+    <h1 class="posttitle" itemprop="name headline">
+        wordpress payment plugin Part1
+    </h1>
+
+
+
+    
+    <div class="postdate">
+      
+        <time datetime="1398-11-22T00:52:19.000Z" itemprop="datePublished">۱۳۹۸-۱۱-۲۲</time>
+        
+      
+    </div>
+
+
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <style>
+img { width: 200px; }
+</style>
+
+<p><img src="/images/geeksesi-ir_wordpress_payment_plugin_p1.jpg" alt="Mohammad Javad Ghasemy"></p>
+<h2 id="The-Story"><a href="#The-Story" class="headerlink" title="The Story"></a>The Story</h2><p>Hey there, how are you ? i want to write a little about my experince as a wordpress plugin developer in week one of <a href="https://geeksesi.ir/">100DaysOfCode</a>. you can find some of my plugin in <a target="_blank" rel="noopener" href="https://github.com/geeksesi">github</a>.</p>
+<p>so let’s start to know what we need. and make a payment plugin like this : <a target="_blank" rel="noopener" href="https://github.com/geeksesi/wp-zilon-woocommerce">wp-zilon-woocommerce</a></p>
+<h2 id="Wordpress"><a href="#Wordpress" class="headerlink" title="Wordpress"></a>Wordpress</h2><p>i don’t want to explain what is the wordpress but you know wordpress is one of the popular CMS for make website and because Woocommerce, wordpress now is a good choice to make a shop Website.</p>
+<p>we want to make a simple plugin here. so you need some basics tools like :</p>
+<ul>
+<li>Wordpress installed on a webservice (you can use remote host or install and configure Apache || if you are in windows use <a target="_blank" rel="noopener" href="https://www.apachefriends.org/index.html">Xampp</a>)</li>
+<li>not bad knowledge of PHP (you can grow in project so if you are not good in php also you can make it)</li>
+<li>a little funny code editor (i use both Vscode and Vim)</li>
+</ul>
+<p>if you have a problem to make your enviroment tell me and i will help you as far as I can.</p>
+<h3 id="wordpress-structure"><a href="#wordpress-structure" class="headerlink" title="wordpress structure"></a>wordpress structure</h3><p>when you install wordpress you have something like this :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- wp-admin&#x2F;</span><br><span class="line">- wp-include&#x2F;</span><br><span class="line">- wp-content&#x2F;</span><br><span class="line">    - plugins&#x2F;</span><br><span class="line">    - themes&#x2F;</span><br><span class="line">    - uploads&#x2F;</span><br><span class="line">    - upgrade&#x2F;</span><br><span class="line">    - and some other things...</span><br><span class="line">- other files here...</span><br></pre></td></tr></table></figure>
+
+<p>we must to put our plugin in <code>wp-content/plugins/</code>. just choice a name for your plugin ( if you want to publish plugin in wordpress repo start name of your plugin must be include <code>wp-</code> character ) and make a folder in above directory. we must to make something like this :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- wp-content</span><br><span class="line">    - plugins</span><br><span class="line">        - PLUGIN_NAME</span><br><span class="line">            - PLUGIN_NAME.php</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>care about name choicing because duplicate name and functions will make confilict in wordpress.</li>
+</ul>
+<h3 id="plugin-explain"><a href="#plugin-explain" class="headerlink" title="plugin explain"></a>plugin explain</h3><p>we are in peace here :D and we need some comments in our plugin. something like this :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">Plugin name: NAME_OF_PLUGIN</span><br><span class="line">Plugin URI: URL_OF_PLUGIN_HOME_PAGE</span><br><span class="line">Description: EXPLAIN What is this :)</span><br><span class="line">Version: 1.0.0</span><br><span class="line">Author: what is your name ?</span><br><span class="line">Author URI: have you a website ? if not put your github url :D</span><br><span class="line">Text Domain: -e(&#39;NAME OF PLUGIN&#39;,&#39;NAME_OF_PLUGIN&#39;)</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>i will explain more about text domain in future.</p>
+</li>
+<li><p>you must to put this comment on first of your plugin file.</p>
+</li>
+</ul>
+<h3 id="detect-a-problem"><a href="#detect-a-problem" class="headerlink" title="detect a problem"></a>detect a problem</h3><p>in php user can access to you plugin directly. (it’s a problem for our wordpress security) worpdress has a easy way to fix this issue. you must to put <code>defined(&#39;ABSPATH&#39;) || exit(&#39;No Direct Access.&#39;);</code> after <code>&lt;?php</code> in your each file. this code will check if a ABSPATH (it’s a wordpress local variable) isset means user running this plugin how we want. but if not set means user want to make a not valid request to our serve and we must to kill this connection.</p>
+<h3 id="some-usefull-defines"><a href="#some-usefull-defines" class="headerlink" title="some usefull defines"></a>some usefull defines</h3><p>it’s good to make some routes define in our plugin. always i will make this :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define(&#39;WP_ZILON_WOOCOMMERCE_DIR&#39;, plugin_dir_path(__FILE__));</span><br><span class="line">define(&#39;WP_ZILON_WOOCOMMERCE_URL&#39;, plugin_dir_url(__FILE__));</span><br><span class="line">define(&#39;WP_ZILON_WOOCOMMERCE_ASSETS_URL&#39;, trailingslashit(WP_ZILON_WOOCOMMERCE_URL.&#39;assets&#x2F;&#39;));</span><br><span class="line">define(&#39;WP_ZILON_WOOCOMMERCE_INC_DIR&#39;, trailingslashit(WP_ZILON_WOOCOMMERCE_DIR.&#39;app&#x2F;&#39;));</span><br></pre></td></tr></table></figure>
+
+<p>this const variables will help us in future :)</p>
+<h3 id="start-coding"><a href="#start-coding" class="headerlink" title="start coding."></a>start coding.</h3><p>now your plugin is ready. i will show how to make shortcode in next part of this post.</p>
+<p>be happy untile the next post :) good luck.</p>
+
+  </div>
+  <br>
+  <div class="meta">
+    <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">محمد جواد قاسمی - چرک‌نویس</span>
+    </span>
+    <br>
+    
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/php/">php</a> › <a class="category-link" href="/categories/php/wordpress/">wordpress</a>
+    </div>
+
+
+    
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/payment/" rel="tag">payment</a>, <a class="tag-link-link" href="/tags/php/" rel="tag">php</a>, <a class="tag-link-link" href="/tags/woocommerce/" rel="tag">woocommerce</a>, <a class="tag-link-link" href="/tags/wordpress/" rel="tag">wordpress</a>, <a class="tag-link-link" href="/tags/wordpress-plugin/" rel="tag">wordpress_plugin</a>
+    </div>
+
+
+  </div>
+</article>
+<br>
+<hr>
+<br>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>برای مشاهده دیدگاه‌ها، لطفا جاوااسکریپت را فعال کنید.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Story"><span class="toc-number">1.</span> <span class="toc-text">The Story</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wordpress"><span class="toc-number">2.</span> <span class="toc-text">Wordpress</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wordpress-structure"><span class="toc-number">2.1.</span> <span class="toc-text">wordpress structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugin-explain"><span class="toc-number">2.2.</span> <span class="toc-text">plugin explain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#detect-a-problem"><span class="toc-number">2.3.</span> <span class="toc-text">detect a problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#some-usefull-defines"><span class="toc-number">2.4.</span> <span class="toc-text">some usefull defines</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#start-coding"><span class="toc-number">2.5.</span> <span class="toc-text">start coding.</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&text=wordpress payment plugin Part1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&is_video=false&description=wordpress payment plugin Part1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=wordpress payment plugin Part1&body=Check out this article: https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&title=wordpress payment plugin Part1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&name=wordpress payment plugin Part1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/&t=wordpress payment plugin Part1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> منو</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> محتوا</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> اشتراک‌گذاری</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> بالا</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    حق‌کپی &copy; 2020 Mohammad Javad Ghasemy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-154920522-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'geeksesi-ir';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
