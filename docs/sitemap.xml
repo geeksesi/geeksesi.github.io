@@ -1,89 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <url>
-    <loc>https://geeksesi.ir/categories/</loc>
-    
-    <lastmod></lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/categories/</loc>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/search/</loc>
-    
-    <lastmod></lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/search/</loc>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/07/21/make-wordpress-plugin-how-create-custom-widget-by-plugin/</loc>
-    
-    <lastmod>2020-10-12T06:30:00.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc
+        >https://geeksesi.ir/1399/07/21/make-wordpress-plugin-how-create-custom-widget-by-plugin/</loc>
+            
+            <lastmod>2020-10-12T06:30:00.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/07/19/make-wordpress-plugin-add-admin-panel/</loc>
-    
-    <lastmod>2020-10-10T08:30:00.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1399/07/19/make-wordpress-plugin-add-admin-panel/</loc>
+            
+            <lastmod>2020-10-10T08:30:00.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/07/18/make-wordpress-plugin-make-first-plugin/</loc>
-    
-    <lastmod>2020-10-09T16:30:00.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1399/07/18/make-wordpress-plugin-make-first-plugin/</loc>
+            
+            <lastmod>2020-10-09T16:30:00.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/07/17/make-wordpress-plugin-plugin-structure/</loc>
-    
-    <lastmod>2020-10-08T09:30:00.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1399/07/17/make-wordpress-plugin-plugin-structure/</loc>
+            
+            <lastmod>2020-10-08T09:30:00.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/06/30/laravel-graphql/</loc>
-    
-    <lastmod>2020-09-20T13:27:16.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1399/06/30/laravel-graphql/</loc>
+            
+            <lastmod>2020-09-20T13:27:16.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1399/06/21/after-3-month-work-on-project/</loc>
-    
-    <lastmod>2020-09-11T12:48:16.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1399/06/21/after-3-month-work-on-project/</loc>
+            
+            <lastmod>2020-09-11T12:48:16.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1398/12/13/get-love-and-money-together/</loc>
-    
-    <lastmod>2020-03-02T01:35:10.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1398/12/13/get-love-and-money-together/</loc>
+            
+            <lastmod>2020-03-02T01:35:10.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1398/12/07/wordpress-payment-plugin-part2/</loc>
-    
-    <lastmod>2020-02-25T22:34:11.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1398/12/07/wordpress-payment-plugin-part2/</loc>
+            
+            <lastmod>2020-02-25T22:34:11.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/</loc>
-    
-    <lastmod>2020-02-11T00:48:03.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1398/11/22/wordpress-payment-plugin-part1/</loc>
+            
+            <lastmod>2020-02-11T00:48:03.000Z</lastmod>
+            
+        </url>
   
-  <url>
-    <loc>https://geeksesi.ir/1398/11/18/hello-world/</loc>
-    
-    <lastmod>2020-02-07T01:09:04.000Z</lastmod>
-    
-  </url>
+        <url>
+            <loc>https://geeksesi.ir/1398/11/18/hello-world/</loc>
+            
+            <lastmod>2020-02-07T01:09:04.000Z</lastmod>
+            
+        </url>
   
 
   <url>
@@ -139,7 +136,8 @@
   </url>
   
   <url>
-    <loc>https://geeksesi.ir/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/</loc>
+    <loc
+        >https://geeksesi.ir/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/</loc>
     <lastmod>2020-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
