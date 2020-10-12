@@ -1,6 +1,7 @@
 ---
 title: ساخت افزونه وردپرس - ساخت صفحه ادمین
 date: 1399-07-19 12:00:00
+sitemap_date: 2020-10-10 12:00:00
 author: Mohammad Javad Ghasemy
 comments: true
 rtl: true

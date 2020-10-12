@@ -1,6 +1,7 @@
 ---
 title: ساخت افزونه وردپرس - ساختار افزونه
 date: 1399-07-17 13:00:00
+sitemap_date: 2020-10-08 13:00:00
 author: Mohammad Javad Ghasemy
 comments: true
 rtl: true

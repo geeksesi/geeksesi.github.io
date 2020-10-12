@@ -1,6 +1,7 @@
 ---
 title: ساخت افزونه وردپرس - ساخت اولین افزونه
 date: 1399-07-18 20:00:00
+sitemap_date: 2020-10-09 20:00:00
 author: Mohammad Javad Ghasemy
 comments: true
 rtl: true

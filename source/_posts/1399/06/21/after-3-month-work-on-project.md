@@ -4,6 +4,7 @@ author: Mohammad Javad Ghasemy
 comments: true
 rtl: true
 date: 1399-06-21 17:18:16
+sitemap_date: 2020-09-11 17:18:16
 picture: geeksesi-ir-duck-tierd.jpeg
 tags:
     - payzos

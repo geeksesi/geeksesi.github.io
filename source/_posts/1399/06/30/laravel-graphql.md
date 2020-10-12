@@ -1,6 +1,7 @@
 ---
 title: از سرگیری پروژه با Laravel, GraphQL
 date: 1399-06-30 17:57:00
+sitemap_date: 2020-09-20 17:57:16
 author: Mohammad Javad Ghasemy
 comments: true
 rtl: true

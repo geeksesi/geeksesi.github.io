@@ -1,6 +1,7 @@
 ---
 title: ساخت افزونه وردپرس - چطوری ابزارک (widget) بسازیم ؟
 date: 1399-07-21 10:00:00
+sitemap_date: 2020-10-12 10:00:00
 author: Mohammad Javad Ghasemy
 comments: true
 rtl: true
