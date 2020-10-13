@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang=fa>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="سلام، خب رسیدیم به مبحث شیرین گشادی با ای‌پی‌آی (Rest Api). از اونجاییکه من خیلی بحث‌های مربوط به PWA, SPA رو دوست دارم از بک‌اندی که ای‌پی‌آی نداشته باشه خوشم نمیاد، فلذا همیشه سعی می کنم ای‌پی‌آی بس">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ساخت افزونه وردپرس - با rest api عاشق شوید">
+<meta property="og:url" content="https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/">
+<meta property="og:site_name" content="محمد جواد قاسمی - چرک‌نویس">
+<meta property="og:description" content="سلام، خب رسیدیم به مبحث شیرین گشادی با ای‌پی‌آی (Rest Api). از اونجاییکه من خیلی بحث‌های مربوط به PWA, SPA رو دوست دارم از بک‌اندی که ای‌پی‌آی نداشته باشه خوشم نمیاد، فلذا همیشه سعی می کنم ای‌پی‌آی بس">
+<meta property="og:locale">
+<meta property="article:published_time" content="1399-07-22T08:04:16.000Z">
+<meta property="article:modified_time" content="2020-10-13T09:12:33.161Z">
+<meta property="article:author" content="Mohammad Javad Ghasemy">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="وردپرس">
+<meta property="article:tag" content="افزونه وردپرس">
+<meta property="article:tag" content="wordpress">
+<meta property="article:tag" content="داشبورد ادمین">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>ساخت افزونه وردپرس - با rest api عاشق شوید</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="محمد جواد قاسمی - چرک‌نویس" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body class="max-width mx-auto px3 rtl">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/1399/07/21/make-wordpress-plugin-how-create-custom-widget-by-plugin/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">پست پیشین</span>
+      <span id="i-next" class="info" style="display:none;">پست یعدی</span>
+      <span id="i-top" class="info" style="display:none;">بازگشت به بالا</span>
+      <span id="i-share" class="info" style="display:none;">اشتراک‌گذاری</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&text=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&is_video=false&description=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ساخت افزونه وردپرس - با rest api عاشق شوید&body=Check out this article: https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&name=ساخت افزونه وردپرس - با rest api عاشق شوید&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&t=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Wordpress-Rest-Api"><span class="toc-number">1.</span> <span class="toc-text">Wordpress Rest Api</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#register-rest-route"><span class="toc-number">1.1.</span> <span class="toc-text">register_rest_route</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%D8%A8%D9%87-%D9%87%D9%85%DB%8C%D9%86-%D8%B1%D8%A7%D8%AD%D8%AA%DB%8C-%D8%AA%D9%85%D9%88%D9%85-%D8%B4%D8%AF-%D8%9F"><span class="toc-number">1.2.</span> <span class="toc-text">به همین راحتی تموم شد ؟</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%A7%DA%AF%D8%B1-%D9%85%D8%B7%D8%A7%D9%84%D8%A8-%D9%82%D8%A8%D9%84%DB%8C-%D8%B1%D8%A7-%D9%87%D9%86%D9%88%D8%B2-%D9%86%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%87-%D8%A7%DB%8C%D8%AF-%D9%88-%DB%8C%D9%87-%D8%B3%D8%B1%D9%87-%D8%A7%D9%88%D9%85%D8%AF%DB%8C%D8%AF-%D8%B3%D8%B1-%D9%88%D9%82%D8%AA-%D8%A7%DB%8C%D9%86-%D9%85%D8%B7%D9%84%D8%A8"><span class="toc-number">2.</span> <span class="toc-text">اگر مطالب قبلی را هنوز نخوانده اید و یه سره اومدید سر وقت این مطلب :</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <div class="post-image" > 
+        <a href="/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/" target="_blank" itemprop="url"><img src="geeksesi-ir_make-wordpress-plugin-rest-api.jpeg" alt="ساخت افزونه وردپرس - با rest api عاشق شوید-image" title="ساخت افزونه وردپرس - با rest api عاشق شوید"></a>
+    </div>
+    <br>
+
+    
+    <h1 class="posttitle" itemprop="name headline">
+        ساخت افزونه وردپرس - با rest api عاشق شوید
+    </h1>
+
+
+
+    
+    <div class="postdate">
+      
+        <time datetime="1399-07-22T08:04:16.000Z" itemprop="datePublished">۱۳۹۹-۰۷-۲۲</time>
+        
+      
+    </div>
+
+
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>سلام، خب رسیدیم به مبحث شیرین گشادی با ای‌پی‌آی (Rest Api).</p>
+<p>از اونجاییکه من خیلی بحث‌های مربوط به PWA, SPA رو دوست دارم از بک‌اندی که ای‌پی‌آی نداشته باشه خوشم نمیاد، فلذا همیشه سعی می کنم ای‌پی‌آی بسازم بعد اینور بیام با ریکت و داستان های دیگه هندلش کنم و یه فرانت خوب بزنم تنگش.</p>
+<p>خب خیلی حرف نزنیم بریم سراغ بحثمون. اینبار خیلی ساده فقط می خواهیم یه سری مسیر بسازیم و آشنا بشیم با اینکه این مسیر ها توی وردپرس چجوری دارن کار می کنن.</p>
+<h1 id="Wordpress-Rest-Api"><a href="#Wordpress-Rest-Api" class="headerlink" title="Wordpress Rest Api"></a>Wordpress Rest Api</h1><p>خب کارمون اینجا هم با چنگ و دندون (Hook) پیش میره، منتها یکم تعداد قلابامون زیاد میشن نگران نباشید، سخت نگیرید و لذت ببرید.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Make Beautiful Rest Api</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">add_action(<span class="string">&#x27;rest_api_init&#x27;</span>, <span class="string">&quot;LHWPP_rest_route_init&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LHWPP_rest_route_init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    register_rest_route(<span class="string">&#x27;lhwpp/v1&#x27;</span>, <span class="string">&#x27;hello&#x27;</span>, [</span><br><span class="line">        <span class="string">&quot;methods&quot;</span> =&gt; <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">        <span class="string">&quot;callback&quot;</span> =&gt; <span class="string">&quot;LHWPP_rest_hello_handler&quot;</span>,</span><br><span class="line">    ]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Route : site-url/wp-json/lhwpp/v1/hello</span></span><br><span class="line"><span class="comment"> * Method : POst</span></span><br><span class="line"><span class="comment"> * input : null</span></span><br><span class="line"><span class="comment"> * output : string</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LHWPP_rest_hello_handler</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $output = [];</span><br><span class="line">    $output[<span class="string">&quot;ok&quot;</span>] = <span class="literal">true</span>;</span><br><span class="line">    $output[<span class="string">&quot;message&quot;</span>] = <span class="string">&quot;Hello World I&#x27;m Panda&quot;</span>;</span><br><span class="line"></span><br><span class="line">    $out = json_encode($output);</span><br><span class="line">    <span class="keyword">return</span> $output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>خب این کد و لینک های زیر رو داشته باشید تا هرجایی که بتونم رو سعی می کنم توضیح بدم.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/hooks/rest_api_init/">rest_api_init Hook</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/functions/register_rest_route/">register_rest_route()</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/rest-api/extending-the-rest-api/"> چجوری ای‌پی‌آي وردپرس را گسترش دهیم به زبان سخت</a></li>
+</ul>
+<p>خب برای اینکه به وردپرس حالی کنیم یه مسیر ای‌پی‌آی بهمون بده باید یه قلاب بندازیم سمتش و مسیرمون رو توی تابعی که سر قلاب وصل می کنیم تعریف کنیم.</p>
+<p>تابع <code>register_rest_route</code> برای ما مسیر می سازه. ورودی های تابع هم از این قراره :</p>
+<h2 id="register-rest-route"><a href="#register-rest-route" class="headerlink" title="register_rest_route"></a>register_rest_route</h2><ul>
+<li><p>namespace : اسمی که برای این گروه از مسیر های پلاگین انتخاب می‌کنیم ()</p>
+</li>
+<li><ul>
+<li>حواستون باشه که اینجا هم باید یه اسم کاملا شاخص انتخاب کنید</li>
+</ul>
+</li>
+<li><ul>
+<li>نکته بعد اینکه ورژن یادتون نره. ممکنه در آینده بخواهید تغییری توی مسیرهاتون ایجاد کنید و هنوز کلاینت هایی باشن که بروز نشدن. برای جلوگیری از درگیری اسم مسیر رو اینجوری تعیین کنید : <code>namespace/version</code></li>
+</ul>
+</li>
+<li><p>route : اسم مسیر (چون اسم گروهی خاص انتخاب کردید دیگه نیاز نیست نگران درگیری اسم مسیرتون با ما بقی پلاگین ها باشید)</p>
+</li>
+<li><p>option : تنظیمات و یک سری مواردی که برای مسیر‌هاتون باید مشخص کنید</p>
+</li>
+<li><ul>
+<li>methods :‌ POST | GET | PUT | HEAD | DELETE | … <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">More Information</a></li>
+</ul>
+</li>
+<li><ul>
+<li>callback : تابعی که می خواهیم به ریکوئست های ای‌پی‌آی مون رسیدگی کنیم.</li>
+</ul>
+</li>
+</ul>
+<h2 id="به-همین-راحتی-تموم-شد-؟"><a href="#به-همین-راحتی-تموم-شد-؟" class="headerlink" title="به همین راحتی تموم شد ؟"></a>به همین راحتی تموم شد ؟</h2><p>اره دیگه تموم شد، شاخ فیل که نمی‌خواستیم بشکنیم.</p>
+<p>API تون با ادرس <code>SITE_URL.com/wp-json/namespace/route</code> در دسترسه. اگر هم نبود به تنظیمات پیوندیکتا وردپرستون مراجعه کنید.</p>
+<p>به پایان آمد این دفتر (یادم رفت لینک‌های داخلی رو بزارم همین آخر پست می زارم. شما ندیده بگیر رد شو برو)</p>
+<h1 id="اگر-مطالب-قبلی-را-هنوز-نخوانده-اید-و-یه-سره-اومدید-سر-وقت-این-مطلب"><a href="#اگر-مطالب-قبلی-را-هنوز-نخوانده-اید-و-یه-سره-اومدید-سر-وقت-این-مطلب" class="headerlink" title="اگر مطالب قبلی را هنوز نخوانده اید و یه سره اومدید سر وقت این مطلب :"></a>اگر مطالب قبلی را هنوز نخوانده اید و یه سره اومدید سر وقت این مطلب :</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/geeksesi/learn-how-to-make-wordpress-plugin">مخزن گیت‌هاب افزونه‌ای که داریم می سازیم</a></li>
+<li><a href="https://geeksesi.ir/1399/07/18/make-wordpress-plugin-make-first-plugin/">پست اول در مورد اینکه چجوری یه افزونه وردپرس رو شروع کنیم</a></li>
+<li><a href="https://geeksesi.ir/1399/07/19/make-wordpress-plugin-add-admin-panel/">پست دوم - صفحه ادمین و صفحه تنظیمات برای پلاگین خودمون بسازیم</a></li>
+<li><a href="https://geeksesi.ir/1399/07/21/make-wordpress-plugin-how-create-custom-widget-by-plugin/">پست سوم - با پلاگین وردپرس خود ابزارک بسازید</a></li>
+</ul>
+
+  </div>
+  <br>
+  <div class="meta">
+    <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Mohammad Javad Ghasemy</span>
+    </span>
+    <br>
+    
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/php/">php</a> › <a class="category-link" href="/categories/php/wordpress/">wordpress</a> › <a class="category-link" href="/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/">اموزش</a> › <a class="category-link" href="/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/">وردپرس</a>
+    </div>
+
+
+    
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/php/" rel="tag">php</a>, <a class="tag-link-link" href="/tags/wordpress/" rel="tag">wordpress</a>, <a class="tag-link-link" href="/tags/%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/" rel="tag">افزونه وردپرس</a>, <a class="tag-link-link" href="/tags/%D8%AF%D8%A7%D8%B4%D8%A8%D9%88%D8%B1%D8%AF-%D8%A7%D8%AF%D9%85%DB%8C%D9%86/" rel="tag">داشبورد ادمین</a>, <a class="tag-link-link" href="/tags/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/" rel="tag">وردپرس</a>
+    </div>
+
+
+  </div>
+</article>
+<br>
+<hr>
+<br>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>برای مشاهده دیدگاه‌ها، لطفا جاوااسکریپت را فعال کنید.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Wordpress-Rest-Api"><span class="toc-number">1.</span> <span class="toc-text">Wordpress Rest Api</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#register-rest-route"><span class="toc-number">1.1.</span> <span class="toc-text">register_rest_route</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%D8%A8%D9%87-%D9%87%D9%85%DB%8C%D9%86-%D8%B1%D8%A7%D8%AD%D8%AA%DB%8C-%D8%AA%D9%85%D9%88%D9%85-%D8%B4%D8%AF-%D8%9F"><span class="toc-number">1.2.</span> <span class="toc-text">به همین راحتی تموم شد ؟</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%A7%DA%AF%D8%B1-%D9%85%D8%B7%D8%A7%D9%84%D8%A8-%D9%82%D8%A8%D9%84%DB%8C-%D8%B1%D8%A7-%D9%87%D9%86%D9%88%D8%B2-%D9%86%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%87-%D8%A7%DB%8C%D8%AF-%D9%88-%DB%8C%D9%87-%D8%B3%D8%B1%D9%87-%D8%A7%D9%88%D9%85%D8%AF%DB%8C%D8%AF-%D8%B3%D8%B1-%D9%88%D9%82%D8%AA-%D8%A7%DB%8C%D9%86-%D9%85%D8%B7%D9%84%D8%A8"><span class="toc-number">2.</span> <span class="toc-text">اگر مطالب قبلی را هنوز نخوانده اید و یه سره اومدید سر وقت این مطلب :</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&text=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&is_video=false&description=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ساخت افزونه وردپرس - با rest api عاشق شوید&body=Check out this article: https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&title=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&name=ساخت افزونه وردپرس - با rest api عاشق شوید&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/&t=ساخت افزونه وردپرس - با rest api عاشق شوید"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> منو</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> محتوا</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> اشتراک‌گذاری</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> بالا</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    حق‌کپی &copy; 2020 Mohammad Javad Ghasemy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-154920522-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'geeksesi-ir';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
