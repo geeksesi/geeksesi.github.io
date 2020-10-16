@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
         <url>
+            <loc>https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/</loc>
+            
+            <lastmod>Fri Oct 16 2020 10:20:00 GMT+0330 (Iran Standard Time)</lastmod>
+            
+        </url>
+  
+        <url>
             <loc>https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/</loc>
             
-            <lastmod>Tue Oct 13 2020 11:30:00 GMT+0330 (Iran Standard Time)</lastmod>
+            <lastmod>2020-10-13T08:00:00.000Z</lastmod>
             
         </url>
   
@@ -91,7 +98,7 @@
 
   <url>
     <loc>https://geeksesi.ir/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -101,63 +108,63 @@
   
   <url>
     <loc>https://geeksesi.ir/categories/experience/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/php/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/php/wordpress/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/php/laravel/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/blog/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/php/graphql/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://geeksesi.ir/categories/blog/soul-write/</loc>
-    <lastmod>2020-10-13</lastmod>
+    <lastmod>2020-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

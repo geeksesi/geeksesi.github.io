@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang=fa>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="خب دیگه کم‌کم داره تعهد 7 تا پست آموزش وردپرس من تموم میشه. توی این ۲ تا آخری می خوام اگه بتونم سنگ تموم بزارم. سخب سریع بحث رو جدی کنیم که پروژه دارم خیلی وقت نوشتن ندارم. دیتابیس در وردپرسخب اینبار">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید">
+<meta property="og:url" content="https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/">
+<meta property="og:site_name" content="محمد جواد قاسمی - چرک‌نویس">
+<meta property="og:description" content="خب دیگه کم‌کم داره تعهد 7 تا پست آموزش وردپرس من تموم میشه. توی این ۲ تا آخری می خوام اگه بتونم سنگ تموم بزارم. سخب سریع بحث رو جدی کنیم که پروژه دارم خیلی وقت نوشتن ندارم. دیتابیس در وردپرسخب اینبار">
+<meta property="og:locale">
+<meta property="article:published_time" content="1399-07-25T06:54:16.000Z">
+<meta property="article:modified_time" content="2020-10-16T07:34:13.130Z">
+<meta property="article:author" content="Mohammad Javad Ghasemy">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="وردپرس">
+<meta property="article:tag" content="افزونه وردپرس">
+<meta property="article:tag" content="wordpress">
+<meta property="article:tag" content="داشبورد ادمین">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/82aa142a58843bd395c527dbceb59f54?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="محمد جواد قاسمی - چرک‌نویس" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body class="max-width mx-auto px3 rtl">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">پست پیشین</span>
+      <span id="i-next" class="info" style="display:none;">پست یعدی</span>
+      <span id="i-top" class="info" style="display:none;">بازگشت به بالا</span>
+      <span id="i-share" class="info" style="display:none;">اشتراک‌گذاری</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&text=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&is_video=false&description=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید&body=Check out this article: https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&name=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&t=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%AF%DB%8C%D8%AA%D8%A7%D8%A8%DB%8C%D8%B3-%D8%AF%D8%B1-%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3"><span class="toc-number">1.</span> <span class="toc-text">دیتابیس در وردپرس</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%AA%D9%85%D9%88%D9%85-%D8%B4%D8%AF-%D9%80"><span class="toc-number">2.</span> <span class="toc-text">تموم شد -ـ-</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1-%D8%A8%D8%AE%D9%88%D8%A7%D9%86%DB%8C%D8%AF"><span class="toc-number">3.</span> <span class="toc-text">بیشتر بخوانید</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    
+
+    
+    <h1 class="posttitle" itemprop="name headline">
+        ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید
+    </h1>
+
+
+
+    
+    <div class="postdate">
+      
+        <time datetime="1399-07-25T06:54:16.000Z" itemprop="datePublished">۱۳۹۹-۰۷-۲۵</time>
+        
+      
+    </div>
+
+
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>خب دیگه کم‌کم داره تعهد 7 تا پست آموزش وردپرس من تموم میشه. توی این ۲ تا آخری می خوام اگه بتونم سنگ تموم بزارم.</p>
+<p>سخب سریع بحث رو جدی کنیم که پروژه دارم خیلی وقت نوشتن ندارم.</p>
+<h1 id="دیتابیس-در-وردپرس"><a href="#دیتابیس-در-وردپرس" class="headerlink" title="دیتابیس در وردپرس"></a>دیتابیس در وردپرس</h1><p>خب اینبار می خوام چندتا مسئله رو بهم بپیچونم. قصد دارم توی این پست نشونتون بدم چجوری برای پلاگینتون یه جدول وردپرس ایجاد کنید و تابع ازش توی پلاگینتون استفاده کنید.</p>
+<p>اولین مسئله ای که با ساخت جدول توی مای‌اسکیول مواجه میشیم قضیه مهاجرت (migration) هست که توی وردپرس خیلی کم بهش بها داده شده و برنامه‌نویس باید با دستای ناتوان خودش قضیه رو حل و فصل کنه.</p>
+<p>منطق اینجوری کار می کنه. ما می خوایم بگیم هر وقت یه نفر پلاگین مارو فعال کرد برو و یه جدول دیتابیس برامون بساز.</p>
+<p>خب حالا دوباره بریم تو کار چنگ و دندون اینبار یکم فرض داره قلابی که باید بندازیم نشونتون میدم.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/functions/register_activation_hook/">register-activation_hook</a></li>
+</ul>
+<p>باید از این گل‌پسر (شاید بگید توابع مگه جنسیت دارن. اره ما می تونیم بهشون میدیم.) استفاده کنیم.</p>
+<p>این شکلی :‌</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">register_activation_hook(__FILE__, &#39;LHWPP_plugin_activate&#39;);</span><br><span class="line">function LHWPP_plugin_activate()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>خب حالا باید اینجا یه مشته کد بریزیم که جدول مورد نظرمون رو توی دیتابیس وردپرس بسازه.</p>
+<p>من یه جدول این شکلی تعریف می کنم (سعی می کنم از دیتا تایپ های مهم استفاده کنم که جنبه آموزشی داشته باشه )</p>
+<p>خب من تابع رو اینجوری تغییر میدم بعد شروع می کنم به توضیح دادن</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function LHWPP_plugin_activate()</span><br><span class="line">&#123;</span><br><span class="line">    global $wpdb;</span><br><span class="line">    $table_name &#x3D; $wpdb-&gt;prefix . &#39;LHWPP_table&#39;;</span><br><span class="line"></span><br><span class="line">    $sql &#x3D;</span><br><span class="line">        &quot; CREATE TABLE &quot; .</span><br><span class="line">        $table_name .</span><br><span class="line">        &quot; (</span><br><span class="line">        id                  BIGINT(20)   NOT NULL AUTO_INCREMENT,</span><br><span class="line">        title               TEXT         NOT NULL,</span><br><span class="line">        start_time          DATETIME     NOT NULL,</span><br><span class="line">        finish_time         DATETIME         NULL,</span><br><span class="line">        status              VARCHAR(20)  NOT NULL,</span><br><span class="line">        PRIMARY KEY  (id)</span><br><span class="line">    )&quot; .</span><br><span class="line">        $wpdb-&gt;get_charset_collate() .</span><br><span class="line">        &quot;;&quot;;</span><br><span class="line"></span><br><span class="line">    require_once ABSPATH . &#39;wp-admin&#x2F;includes&#x2F;upgrade.php&#39;;</span><br><span class="line">    dbDelta($sql);</span><br><span class="line">    add_option(&#39;jal_db_version&#39;, &#39;1.0.0&#39;);</span><br><span class="line">    if ($wpdb-&gt;get_var(&quot;SHOW TABLES LIKE &#39;&quot; . $table_name . &quot;&#39;&quot;) !&#x3D; $table_name) &#123;</span><br><span class="line">        error_log(&quot;unable to make db&quot;);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>این رو از یکی از پروژه های قدیمیم برداشتم. یکم تغییرش دادم. الان کاملا جدول نامربوطیه :))</p>
+<p>خب برای کارکردن با دیتابیس توی وردپرس ما همیشه نیاز به <code>$wpdb</code> داریم. خب مثل بچه آدم میاییم گلوبالش می‌کنیم که توی تابع دسترسی بهش رو داشته باشیم.</p>
+<p>مسئله بعدی اسم جدول هست. از اونجاییکه موقع نصب وردپرس، پیشوند برای جداولمون تعریف می‌کنیم، توی افزونه هامون هم باید شروع اسم جداول با این پیشوند شروع بشه. که خب خیلی راحت با <code>$wpdb-&gt;prefix</code> مقدارش رو می گیریم.</p>
+<p>حالا باید کوئری دیتابیس بزنیم که دیگه این قسمت رو توضیح نمی دم… برید آموزش mysql پیدا کنید و ببینید.</p>
+<p>خب حالا برای اینکه بتونیم کوئری مون رو اجرا کنیم باید از تابع <code>dbDelta()</code> استفاده کنیم.</p>
+<p>ولی خب در حالت عادی این تابع در دسترس نیست. باید از فایلش بگیریمش. پس قبل میریم که چرک بازی رو شروع کنیم (از نظر من وارد کردن یه فایل وسط یه مشت کد واقعا چرک بازیه ولی خب چیکار کنیم ؟ مجبوریم :))) )</p>
+<p>خب شرح وظایف و کارکرد این <code>dbDelta</code> هم طولانیه لینک دایکیومنت می زارم.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/functions/dbdelta/">dbDelta</a></li>
+</ul>
+<p>خب خط بعدی یه کار اختیاریه ولی عمل زیبا و پسندیده ایه.</p>
+<p>خود وردپرس اینجوری در موردش توضیح داده :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Another excellent idea is to add an option to record a version number for your database table structure, so you can use that information later if you need to update the table:</span><br></pre></td></tr></table></figure>
+
+<p>ولی خب به من چه من که حوصله کار های زیبا و پسندیده رو ندارم. پس کامنتش می کنم بره.</p>
+<p>خب حالا چک کنیم ببینیم جدولمون ساخته شده یا نه.</p>
+<p>اگه نشده بود که سرور رو به خاک سیاه می‌نشونیم. اگر هم شده بود که از خبط و خطاش چشم پوشی کرده و اوکی بهش میدیم بره پی کارش.</p>
+<h1 id="تموم-شد-ـ"><a href="#تموم-شد-ـ" class="headerlink" title="تموم شد -ـ-"></a>تموم شد -ـ-</h1><p>خب قبل از اینکه تموم کنم این بخش رو حتما سوال می پرسید حالا که جدول رو ساختیم چجوری باهاش کار کنیم.</p>
+<p>اشکال نداره بپرسید منم ارجاعتون میدم به دایکیومنت وردپرس. یه سری لینک می زارم که به دردتون می خوره.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a></li>
+<li><a target="_blank" rel="noopener" href="https://codex.wordpress.org/Creating_Tables_with_Plugins">creating table with plugin</a></li>
+</ul>
+<h1 id="بیشتر-بخوانید"><a href="#بیشتر-بخوانید" class="headerlink" title="بیشتر بخوانید"></a>بیشتر بخوانید</h1><p>بیایید یه مشته لینک می زارم اینجا و میرم</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/geeksesi/learn-how-to-make-wordpress-plugin">افزونه وردپرس بسازیم !!؟</a></li>
+<li><a href="https://geeksesi.ir/1399/07/18/make-wordpress-plugin-make-first-plugin/">چگونه اولین افزونه وردپرس خود را بسازیم</a></li>
+<li><a href="https://geeksesi.ir/1399/07/19/make-wordpress-plugin-add-admin-panel/">برای افزونه وردپرس خود صفحه ادمین و صفحه تنظیمات بسازید</a></li>
+<li><a href="https://geeksesi.ir/1399/07/21/make-wordpress-plugin-how-create-custom-widget-by-plugin/">با پلاگین وردپرس خود ابزارک بسازید</a></li>
+<li><a href="https://geeksesi.ir/1399/07/22/make-wordpress-plugin-fall-in-love-with-rest-api/">وردپرس و گشادی با rest api</a></li>
+</ul>
+
+  </div>
+  <br>
+  <div class="meta">
+    <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Mohammad Javad Ghasemy</span>
+    </span>
+    <br>
+    
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/php/">php</a> › <a class="category-link" href="/categories/php/wordpress/">wordpress</a> › <a class="category-link" href="/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/">اموزش</a> › <a class="category-link" href="/categories/%D8%A7%D9%85%D9%88%D8%B2%D8%B4/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/">وردپرس</a>
+    </div>
+
+
+    
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/php/" rel="tag">php</a>, <a class="tag-link-link" href="/tags/wordpress/" rel="tag">wordpress</a>, <a class="tag-link-link" href="/tags/%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/" rel="tag">افزونه وردپرس</a>, <a class="tag-link-link" href="/tags/%D8%AF%D8%A7%D8%B4%D8%A8%D9%88%D8%B1%D8%AF-%D8%A7%D8%AF%D9%85%DB%8C%D9%86/" rel="tag">داشبورد ادمین</a>, <a class="tag-link-link" href="/tags/%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3/" rel="tag">وردپرس</a>
+    </div>
+
+
+  </div>
+</article>
+<br>
+<hr>
+<br>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>برای مشاهده دیدگاه‌ها، لطفا جاوااسکریپت را فعال کنید.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%AF%DB%8C%D8%AA%D8%A7%D8%A8%DB%8C%D8%B3-%D8%AF%D8%B1-%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3"><span class="toc-number">1.</span> <span class="toc-text">دیتابیس در وردپرس</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%AA%D9%85%D9%88%D9%85-%D8%B4%D8%AF-%D9%80"><span class="toc-number">2.</span> <span class="toc-text">تموم شد -ـ-</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1-%D8%A8%D8%AE%D9%88%D8%A7%D9%86%DB%8C%D8%AF"><span class="toc-number">3.</span> <span class="toc-text">بیشتر بخوانید</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&text=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&is_video=false&description=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید&body=Check out this article: https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&title=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&name=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://geeksesi.ir/1399/07/25/make-wordpress-plugin-new-database-table-for-our-plugin/&t=ساخت افزونه وردپرس - برای افزونه خود جدول، دیتابیس بسازید"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> منو</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> محتوا</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> اشتراک‌گذاری</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> بالا</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    حق‌کپی &copy; 2020 Mohammad Javad Ghasemy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">خانه</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://resume.geeksesei.ir">درباره‌من</a></li>
+         
+          <li><a href="/archives/">نوشته‌ها</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/geeksesi">پروژه‌ها</a></li>
+         
+          <li><a href="/categories/">دسته‌بندی</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-154920522-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'geeksesi-ir';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
